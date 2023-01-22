@@ -51,9 +51,6 @@ const ProductSidebar = () => {
         <Grid style={{marginLeft:"1%"}}>
             <Button color="inherit" variant="outlined">Children Wear</Button>
         </Grid>
-        <Grid style={{marginLeft:"1%"}}>
-            <Button color="inherit" variant="outlined">For description click on product name</Button>
-        </Grid>
         
         </Grid>
         
