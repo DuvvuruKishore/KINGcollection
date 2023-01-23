@@ -3,7 +3,9 @@ import React,{useEffect,useState} from 'react';
 import { useParams } from 'react-router';
 import ShoppingItems from './Products/ShoppingItems';
 import AddIcon from '@mui/icons-material/Add';
-import {useNavigate} from "react-router-dom"
+import {useNavigate,} from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux';
+import {addToCart } from './reducers/cartSlice';
 import Navbar from './Navbar';
 
 
@@ -14,7 +16,8 @@ const Productdesc = () => {
     const [state,setState]=useState(ShoppingItems);
     const [product,setProduct]=useState({})
     const navigate = useNavigate();
-
+    const dispatch=useDispatch();
+  
 
     useEffect(()=>{
     setProduct(state[id])
@@ -51,9 +54,10 @@ const Productdesc = () => {
         </Grid>
         </Grid>
         <Grid style={{textAlign:"right"}}>
-                <button onClick={()=>{}}>
+        <button onClick={()=>{dispatch(addToCart(product))}}>
                 <AddIcon/>
                   </button>
+               
                 </Grid>
        
         </Grid>
